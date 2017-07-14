@@ -6,9 +6,16 @@ from .forms import PostForm, CommentForm
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 
+def homepage(request):
+    return render(request, 'blog/homepage.html')
 
-def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+def post_list_self_esteem(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), category__contains='self-esteem').order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+    Post.objects.get(pk=pk)
+
+def post_list_drinking_smoking(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), category__contains='drinking-smoking').order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
     Post.objects.get(pk=pk)
 
