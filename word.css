@@ -1,0 +1,26 @@
+body {
+ height: 100vh;
+ display: flex;
+ align-items: center;
+ justify-content: center
+}
+
+ul {
+ display: flex;
+ flex-wrap: wrap;
+}
+
+li {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 5vw;
+ line-height: .8;
+ text-align: left;
+ margin: auto;
+}
+
+p {
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+}
