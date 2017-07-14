@@ -5,6 +5,7 @@ from django.utils import timezone
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
+    category = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(
             default=timezone.now)
@@ -33,4 +34,4 @@ class Comment(models.Model):
         return self.text
 
 def approved_comments(self):
-    return self.comments.filter(approved_comment=True)        
+    return self.comments.filter(approved_comment=True)
