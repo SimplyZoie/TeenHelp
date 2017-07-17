@@ -1,40 +1,42 @@
 {% extends 'blog/base.html' %}
-{% block extra_head %}<style>
-body{background-color:LightSlateGrey;}
-  hi  {color:black;}
-  p   {color:white;}
-  h1{
-    color:AliceBlue;
-  }
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-li {
-    float: left;
-}
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-li a:hover {
-    background-color: #111;
-}
-</style>{% endblock %}
-
 
 {% block content %}
+<head>
+<style>
+body{background-color:LightSlateGrey;}
 
-<h1>Drinking and Smoking</h1>
-<p style= text-align:center>
-  "Smoking Is Harmful, <br> Drinking Is Disgusting, <br> And To Die Young, <br> Is A Pity." <br> -The Fresh Quotes
-</p>
+  .quote   {color:white;}
+  .topic{
+    font-size: 55px;
+    color:AliceBlue;
+    text-align: center;
+  }
+  .post{color:white;
+  text-align: ;}
+  .date{color:white;
+  text-align: ;}
+
+  a:link {
+      color: red;
+      text-align: center;
+  }
+
+  a:visited {
+      color: white;
+      text-align: center;
+  }
+
+  a:hover {
+      color: hotpink;
+      text-align: center;
+  }
+</style>
+</head>
+
+    <h1 class="topic">Drinking and Smoking</h1>
+<p class= "quote" style= text-align:center>
+  <br><br>"Smoking Is Harmful, <br> Drinking Is Disgusting, <br> And To Die Young, <br> Is A Pity." <br> -The Fresh Quotes
+<br><br><br><br></p>
     {% for post in posts %}
         <div class="post">
             <div class="date">
@@ -42,7 +44,7 @@ li a:hover {
             </div>
             <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
             <p>{{ post.text|linebreaksbr }}</p>
-            <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
+            <a href="{% url 'post_detail' pk=post.pk %}"> See Comments: {{ post.approved_comments.count }}</a>
         </div>
     {% endfor %}
 {% endblock %}

@@ -14,10 +14,77 @@ def post_list_self_esteem(request):
     return render(request, 'blog/post_list.html', {'posts': posts})
     Post.objects.get(pk=pk)
 
-def post_list_drinking_smoking(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now(), category__contains='drinking-smoking').order_by('published_date')
+def post_list_body_image(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), category__contains='body-image').order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
     Post.objects.get(pk=pk)
+
+def post_list_stress(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), category__contains='stress').order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+    Post.objects.get(pk=pk)
+
+def post_list_bullying(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), category__contains='bullying').order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+    Post.objects.get(pk=pk)
+
+def post_list_depression(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), category__contains='depression').order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+    Post.objects.get(pk=pk)
+
+def post_list_cyber_addiction(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), category__contains='cyber-addiction').order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+    Post.objects.get(pk=pk)
+
+@login_required
+def post_list_drinking_smoking(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), category__contains='drinking-smoking').order_by('published_date')
+    return render(request, 'blog/post_list_drinking-smoking.html', {'posts': posts})
+
+def post_list_teen_pregnancy(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), category__contains='teen-pregnancy').order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+    Post.objects.get(pk=pk)
+
+def post_list_underage_sex(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), category__contains='underage-sex').order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+    Post.objects.get(pk=pk)
+
+def post_list_child_abuse(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), category__contains='child-abuse').order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+    Post.objects.get(pk=pk)
+
+def post_list_peer_pressure(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), category__contains='peer-pressure').order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+    Post.objects.get(pk=pk)
+
+def post_list_eating_disorders(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), category__contains='eating-disorders').order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+    Post.objects.get(pk=pk)
+
+def post_list_LGBTQ(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), category__contains='LGBTQ').order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+    Post.objects.get(pk=pk)
+
+def post_list_strict_parents(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), category__contains='strict-parents').order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+    Post.objects.get(pk=pk)
+
+def post_list_sleep(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now(), category__contains='sleep').order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
+    Post.objects.get(pk=pk)
+
+
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
