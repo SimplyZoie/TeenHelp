@@ -21,8 +21,22 @@
             <ul class="nav navbar-nav">
               <li>  <a href="#">Hello {{ user.username }}!</a></li>
               <li class="active"><a href="#">Home</a></li>
-
+              <li><a href="{% url 'post_list_self-esteem' %}">Self-Esteem</a></li>
+              <li><a href="{% url 'post_list_body-image' %}">Body Image</a></li>
+             <li><a href="{% url 'post_list_stress' %}">Stress</a></li>
+             <li><a href="{% url 'post_list_bullying' %}">Bullying</a></li>
+             <li><a href="{% url 'post_list_depression' %}">Depression</a></li>
+             <li><a href="{% url 'post_list_cyber-addiction' %}">Cyber Addiction</a></li>
               <li><a href="{% url 'post_list_drinking-smoking' %}">Drinking & Smoking</a></li>
+              <li><a href="{% url 'post_list_teen-pregnancy' %}">Teen Pregnancy</a></li>
+              <li><a href="{% url 'post_list_underage-sex' %}">Underage Sex</a></li>
+              <li><a href="{% url 'post_list_child-abuse' %}">Child Abuse</a></li>
+              <li><a href="{% url 'post_list_peer-pressure' %}">Peer-Pressure</a></li>
+              <li><a href="{% url 'post_list_eating-disorders' %}">Eating Disorders</a></li>
+              <li><a href="{% url 'post_list_LGBTQ' %}">LGBTQ</a></li>
+              <li><a href="{% url 'post_list_strict-parents' %}">Strict Parents</a></li>
+              <li><a href="{% url 'post_list_sleep' %}">Sleep</a></li>
+
 
 
             <li>  {% if user.is_authenticated %}
