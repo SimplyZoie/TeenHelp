@@ -1,7 +1,7 @@
-{% load staticfiles %}
+
 <html>
 <head>
-  <title>Bootstrap Example</title>
+  <title>Teen2Teen</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -19,15 +19,16 @@
               <a class="navbar-brand" href="#">Teen2Teen</a>
             </div>
             <ul class="nav navbar-nav">
+              <li>  <a href="#">Hello {{ user.username }}!</a></li>
               <li class="active"><a href="#">Home</a></li>
 
               <li><a href="{% url 'post_list_drinking-smoking' %}">Drinking & Smoking</a></li>
 
-              <li class="active"><a href="#">Log Out</a></li>
+
             <li>  {% if user.is_authenticated %}
-                  <li><a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></li>
-                <li>  <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a></li>
-                <li>  <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p></li>
+                  <li><a href="{% url 'post_new' %}" class="top-menu">New Post <span class="glyphicon glyphicon-plus"></span></a></li>
+                <li>  <a href="{% url 'post_draft_list' %}" class="top-menu">Your Drafts <span class="glyphicon glyphicon-edit"></span></a></li>
+<li class="active"><a href="{% url 'logout' %}">Log Out</a></li>
               {% else %}
                 <li>  <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a></li>
               {% endif %}</li>
@@ -36,12 +37,9 @@
         </nav>
 
     <div class="content container">
-        <div class="row">
-            <div class="col-md-8">
             {% block content %}
             {% endblock %}
-            </div>
-        </div>
+
     </div>
 </body>
 </html>
