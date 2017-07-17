@@ -1,0 +1,51 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<head>
+<style>
+body{background-color:#ff9bf1;}
+
+
+  .quote   {color:white;}
+  .topic{
+    font-size: 55px;
+    color:AliceBlue;
+    text-align: center;
+  }
+  .post{color:white;
+  text-align: ;}
+  .date{color:white;
+  text-align: ;}
+
+  a:link {
+      color: white;
+      text-align: center;
+  }
+
+  a:visited {
+      color: white;
+      text-align: center;
+  }
+
+  a:hover {
+      color: hotpink;
+      text-align: center;
+  }
+</style>
+</head>
+
+    <h1 class="topic">Teen Pregnancy</h1>
+<p class= "quote" style= text-align:center>
+  <br><br>        "Don't Downgrade me because <br> I'm a Young Mother, <br> Help Me because <br> I'm Willing to Learn"<br>-Unknown
+<br><br><br><br></p>
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+            <a href="{% url 'post_detail' pk=post.pk %}"> See Comments: {{ post.approved_comments.count }}</a>
+        </div>
+    {% endfor %}
+{% endblock %}
