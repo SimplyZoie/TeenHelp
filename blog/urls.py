@@ -1,6 +1,7 @@
 from django.conf.urls import url
 from . import views
 
+
 urlpatterns = [
     url(r'^$', views.homepage, name='homepage'),
     url(r'^self-esteem/$', views.post_list_self_esteem, name='post_list_self-esteem'),
