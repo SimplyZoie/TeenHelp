@@ -1,6 +1,24 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<head>
+<style>
+body{background-color:black;}
+
+  .quote   {color:white;}
+  .topic{
+    font-size: 55px;
+    color:AliceBlue;
+    text-align: center;
+  }
+  .post{color:white;
+  text-align: ;}
+  .date{color:white;
+  text-align: ;}
+
+  }
+</style>
+</head>
     <h1>New post</h1>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}

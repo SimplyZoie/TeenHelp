@@ -1,6 +1,24 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<head>
+<style>
+body{background-color:black;}
+
+  .quote   {color:white;}
+  .topic{
+    font-size: 55px;
+    color:AliceBlue;
+    text-align: center;
+  }
+  .post{color:white;
+  text-align: ;}
+  .date{color:white;
+  text-align: ;}
+
+  }
+</style>
+</head>
     {% for post in posts %}
         <div class="post">
             <p class="date">created: {{ post.created_date|date:'d-m-Y' }}</p>
