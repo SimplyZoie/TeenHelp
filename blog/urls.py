@@ -1,9 +1,12 @@
 from django.conf.urls import url
 from . import views
+from django.conf.urls import url
+from blog import views as blog_views
 
 
 urlpatterns = [
     url(r'^$', views.homepage, name='homepage'),
+    url(r'^signup/$', blog_views.signup, name='signup'),
     url(r'^self-esteem/$', views.post_list_self_esteem, name='post_list_self-esteem'),
     url(r'^body-image/$', views.post_list_body_image, name='post_list_body-image'),
     url(r'^stress/$', views.post_list_stress, name='post_list_stress'),
