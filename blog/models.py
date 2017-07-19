@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
+
 options = {
 ('Self Esteem', 'Self Esteem'),
 ('Body Image', 'Body Image'),
