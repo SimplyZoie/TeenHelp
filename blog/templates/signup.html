@@ -1,8 +1,51 @@
 {% extends "blog/base.html" %}
+<<<<<<< HEAD
 
 {% block content %}
   <h2>Sign up</h2>
   <form method="post">
+=======
+{% block content %}
+<head>
+
+<style>
+.warning {
+    background-color: yellow;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+</style>
+</head>
+
+  <h1>Sign up</h1>
+  <div class="warning">
+  <h1 style="text-align:center">WARNING!!
+  </h1>
+
+  <h2 style="text-align:center">
+  Please Read
+  </h2>
+
+  <P>
+  Suicide is the second leading cause of death for ages 10-24 and for college age youth and ages 12-18, our goal is to hopefully minimize the death percentage. In this website youll be able to post up your story or read other peoples story. You can have conversations with other teens, give feedback or even get feedback and the best part is that this page is confidential and so is your identity, only our admins knows your identity.
+  </P>
+
+  <p>
+  By filling your full legal name below and checking the terms and condition box you agree that if our admins see that your going to harm yourself or someone else we have the right to report you. If you see that someone is planning on hurting themself or someone else please report them.
+
+  </p>
+  <form action="/action_page.php" style=text-align:center>
+  First name: <input type="text" name="FirstName">
+  Middle name: <input type="text" name="MiddleName">
+  Last name: <input type="text" name="LastName"><br>
+  </form>
+</div>
+  <form method="post"><br><br>
+>>>>>>> 4da3c56e0e1e27a910dc331ffbef188848ff8db4
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Sign up</button>
