@@ -1,10 +1,4 @@
 {% extends "blog/base.html" %}
-<<<<<<< HEAD
-
-{% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-=======
 {% block content %}
 <head>
 
@@ -45,7 +39,6 @@
   </form>
 </div>
   <form method="post"><br><br>
->>>>>>> 4da3c56e0e1e27a910dc331ffbef188848ff8db4
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Sign up</button>
